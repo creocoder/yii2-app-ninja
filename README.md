@@ -18,8 +18,8 @@ The preferred way to install this extension is through [composer](http://getcomp
 You can then install the application using the following command
 
 ```bash
-$ php composer.phar global require fxp/composer-asset-plugin
-$ php composer.phar create-project --prefer-dist creocoder/yii2-app-ninja
+$ composer global require fxp/composer-asset-plugin
+$ composer create-project --stability=dev creocoder/yii2-app-ninja
 ```
 
 ## Getting started
