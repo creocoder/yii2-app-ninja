@@ -1,0 +1,39 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Yii console bootstrap file.
+ *
+ * @link https://github.com/creocoder/yii2-app-ninja
+ * @copyright Copyright (c) 2015 Alexander Kochetov
+ * @license http://opensource.org/licenses/BSD-3-Clause
+ */
+
+// fcgi doesn't have STDIN and STDOUT defined by default
+defined('STDIN') or define('STDIN', fopen('php://stdin', 'r'));
+defined('STDOUT') or define('STDOUT', fopen('php://stdout', 'w'));
+
+require(__DIR__ . '/vendor/autoload.php');
+
+Dotenv::load(__DIR__);
+
+if (getenv('YII_DEBUG') === 'true') {
+    defined('YII_DEBUG') or define('YII_DEBUG', true);
+} elseif (getenv('YII_DEBUG') === 'false') {
+    defined('YII_DEBUG') or define('YII_DEBUG', false);
+}
+
+if (getenv('YII_ENV') !== false) {
+    defined('YII_ENV') or define('YII_ENV', getenv('YII_ENV'));
+}
+
+require(__DIR__ . '/vendor/yiisoft/yii2/Yii.php');
+require(__DIR__ . '/common/config/bootstrap.php');
+require(__DIR__ . '/console/config/bootstrap.php');
+
+$config = yii\helpers\ArrayHelper::merge(
+    require(__DIR__ . '/common/config/main.php'),
+    require(__DIR__ . '/console/config/main.php')
+);
+
+$code = (new yii\console\Application($config))->run();
+exit($code);
