@@ -27,13 +27,12 @@ $ php composer.phar create-project --prefer-dist creocoder/yii2-app-ninja
 After you install the application, you have to conduct the following steps to initialize
 the installed application. You only need to do these once for all.
 
-1. Run command `init` to initialize the application with a specific environment.
-2. Create a new database and adjust the `.env` configuration file accordingly.
-3. Apply migrations with console command `yii migrate`. This will create tables needed for the application to work.
-4. Set document roots of your Web server:
+1. Create a new database and adjust the `.env` configuration file accordingly.
+2. Apply migrations with console command `yii migrate`. This will create tables needed for the application to work.
+3. Set document roots of your Web server:
 
-- for frontend `/path/to/yii2-app-ninja/frontend/web/` and using the URL `http://frontend/`
-- for backend `/path/to/yii2-app-ninja/backend/web/` and using the URL `http://backend/`
+- for frontend `/path/to/yii2-app-ninja/frontend/web/`
+- for backend `/path/to/yii2-app-ninja/backend/web/`
 
 To login into the application, you need to first sign up, with any of your email address, username and password.
 Then, you can login into the application with same email address and password at any time.
@@ -69,7 +68,6 @@ frontend
     web/                 contains the entry script and Web resources
     widgets/             contains frontend widgets
 vendor/                  contains dependent 3rd-party packages
-environments/            contains environment configurations
 ```
 
 ## Donating
