@@ -1,5 +1,7 @@
 # Yii 2 Ninja Application Template
 
+[![Code Quality](https://img.shields.io/scrutinizer/g/creocoder/yii2-app-ninja/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/creocoder/yii2-app-ninja/?branch=master)
+
 Yii 2 Ninja Application Template is a skeleton Yii 2 application best for
 developing complex Web applications with multiple tiers.
 
