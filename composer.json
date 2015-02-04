@@ -29,7 +29,7 @@
     "scripts": {
         "post-create-project-cmd": [
             "php -r \"copy('.env.example', '.env');\"",
-            "php -r \"chmod('yii', 755)\"",
+            "php -r \"chmod('yii', 755;\"",
             "yii key/generate"
         ]
     },
