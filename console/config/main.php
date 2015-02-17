@@ -5,14 +5,11 @@ $params = array_merge(
     require(__DIR__ . '/params.php')
 );
 
-return [
+$config = [
     'id' => 'app-console',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'console\controllers',
-    'bootstrap' => ['log', 'gii'],
-    'modules' => [
-        'gii' => 'yii\gii\Module',
-    ],
+    'bootstrap' => ['log'],
     'components' => [
         'log' => [
             'targets' => [
@@ -25,3 +22,10 @@ return [
     ],
     'params' => $params,
 ];
+
+if (YII_ENV_DEV) {
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = 'yii\gii\Module';
+}
+
+return $config;
